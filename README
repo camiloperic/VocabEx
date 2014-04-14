@@ -1,0 +1,27 @@
+VocabEx stands for Vocabulary Exercising.
+
+The program has three main functions which are: add, test and stats.
+The flow starts with adding word pairs (command add) in two different languages (native and the one you want to practice).
+Each word pair will be set to LEVEL 1 words, the ones will be tested sooner. The words LEVELS are defined by their "time to test" in days.
+After having some words we can execute a test (command test). The program will make a list with all the word pairs that should be tested (the time span between their last test and the current test is greater than the pair's level time span). The program then iterates the list showing the word in you native language and asking for it in the other language. When correct the word pair will get to the next level and it will be tested less often. When wrong the wordpair will get to the previews level and will be tested more often. To quit the test before it's end you should answer with an exclamation mark.
+The stats command shows how many word pairs are in each level.
+To quit the program use the command quit.
+
+The program's default LEVELS are:
+
+LEVEL 1: 1 day
+LEVEL 2: 2 days
+LEVEL 3: 3 days
+LEVEL 4: 5 days
+LEVEL 5: 8 days
+LEVEL 6: 13 days
+LEVEL 7: 21 days
+LEVEL 8: 34 days
+LEVEL 9: 55 days
+LEVEL 10: infinite days (not tested)
+
+The LEVELS can be changed using the conf/vocabex.properties file, using "wordclasses" as key.
+Using a 0 days time spam means infinite days, words in this LEVEL are not tested. When using a infinte time span LEVEL make sure it will be the last one, if not the following levels will never be tested.
+The vocabex.properties added line should look like this:
+
+wordclasses=1,2,3,5,8,13,21,34,55,0
